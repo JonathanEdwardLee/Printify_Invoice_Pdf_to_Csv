@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
-
 from IPython.display import clear_output
 
 def display_board (board):
@@ -13,18 +7,6 @@ def display_board (board):
     print(board[4]+'|'+board[5]+'|'+board[6])
     print('-----')
     print(board[1]+'|'+board[2]+'|'+board[3])
-
-
-# In[ ]:
-
-
-#test
-test_board = ['#','O','X','O','X','O','X','X','X','X']
-display_board(test_board)
-
-
-# In[ ]:
-
 
 def player_input():
     #output = (player1_marker,player2_marker)
@@ -37,31 +19,9 @@ def player_input():
     else:
         return ('O','X')    
 
-
-# In[23]:
-
-
-#test
-player1_marker, player2_marker = player_input()
-
-
-# In[26]:
-
-
 def place_marker(board,marker,position):
     
     board[position] = marker
-
-
-# In[28]:
-
-
-#test
-place_marker(test_board,'&',6)
-display_board(test_board)
-
-
-# In[29]:
 
 
 def win_check(board,marker):
@@ -79,16 +39,6 @@ def win_check(board,marker):
     (board[7]==board[5]==board[3]==marker))
 
 
-# In[31]:
-
-
-#test
-win_check(test_board,'X')
-
-
-# In[32]:
-
-
 import random #randomly choose who goes first
 
 def choose_first():
@@ -101,15 +51,9 @@ def choose_first():
         return 'Player 2'
 
 
-# In[36]:
-
-
 def space_check(board,position): #check if position is available to play
     
     return board[position]==' '
-
-
-# In[37]:
 
 
 def full_board_check(board):
@@ -118,9 +62,6 @@ def full_board_check(board):
         if space_check(board,i):
             return False
     return True
-
-
-# In[38]:
 
 
 def player_choice(board):
@@ -132,18 +73,13 @@ def player_choice(board):
         return position
 
 
-# In[39]:
-
-
 #replay?
 def replay():
     
     choice = input('Want to play again? Enter Yes or No ')
     return choice == 'Yes'
 
-
-# In[40]:
-
+#Game Start
 
 print ("Let's play Tic Tac Toe!")
 #while loop to keep running the game
@@ -159,7 +95,7 @@ while True:
         game_on = True
     else:
         game_on = False
-##game play
+    #game play
     while game_on:
         
         if turn == 'Player 1':
@@ -209,8 +145,6 @@ while True:
         break
 #break out the loop with replay()
 
-
-# In[ ]:
 
 
 

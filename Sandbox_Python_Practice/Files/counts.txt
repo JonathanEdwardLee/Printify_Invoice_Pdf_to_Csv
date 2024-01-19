@@ -1,0 +1,5 @@
+Sandbox_Python_Practice\Files\text1.txt: 4 lines, 8 words
+Sandbox_Python_Practice\Files\text2.txt: 3 lines, 6 words
+Sandbox_Python_Practice\Files\text3.txt: 2 lines, 4 words
+
+Total: 9 lines, 18 words

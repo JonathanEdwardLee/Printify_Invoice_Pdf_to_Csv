@@ -1,10 +1,16 @@
 # Jonathan Lee
 
-def did_i_win_2_down(player, board):
-    did_win = player == board[0][2] and \
-              player == board[1][2] and \
-              player == board[2][2]  
-    return did_win
+def did_i_win_down(player, board):
+    # did_win = player == board[0][2] and \
+    #           player == board[1][2] and \
+    #           player == board[2][2]  
+    all_win = False
+    for x in range(3):
+        did_win = True
+        for i in range(3):
+            did_win &= player == board[i][x]
+        all_win |= did_win
+    return all_win
 
 
 def print_2D(b):
@@ -23,8 +29,8 @@ def main():
     for b in boards:
          print_2D(b)
          print("*" * 10)
-         print("X won?", did_i_win_2_down("X", b))
-         print("O won?", did_i_win_2_down("O", b))
+         print("X won?", did_i_win_down("X", b))
+         print("O won?", did_i_win_down("O", b))
 
 if __name__ == "__main__":
     main()
